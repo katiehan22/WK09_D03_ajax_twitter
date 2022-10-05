@@ -12,15 +12,13 @@ async function customFetch(url, options = {}) {
 }
 
 export const followUser = function(id) {
-  let url = `/users/${id}/follow`
-  return customFetch(url), {
-    method: "POST"
-  }
+  return customFetch(`/users/${id}/follow`, {
+    method: "POST",
+  })
 }
 
 export const unfollowUser = function(id) {
-  let url = `/users/${id}/follow`
-  return customFetch(url), {
-    method: "DELETE"
-  }
+  return customFetch(`/users/${id}/follow`, {
+    method: "DELETE",
+  })
 }
