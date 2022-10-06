@@ -37,7 +37,19 @@ export default class FollowToggle {
   render() {
     switch (this.followState) {
       // Your code here
-      
+      case "followed": 
+        this.toggleButton.innerHTML("Unfollow!");
+        break;
+      case "unfollowed":
+        this.toggleButton.innerHTML("Follow!");
+        break;
+      case "following":
+        this.toggleButton.disabled = true;
+        this.toggleButton.innerHTML("Following...");
+        break;
+      case "unfollowing":
+        this.toggleButton.disabled = true;
+        this.toggleButton.innerHTML("Unfollowing...");
     }
   }
 
